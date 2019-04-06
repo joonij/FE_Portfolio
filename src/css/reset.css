@@ -18,13 +18,13 @@ button,
 table {
     color: #333;
     font-family: '나눔고딕',NanumGothic,'Nanum Gothic', '맑은고딕',MalgunGothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
-    font-size: 14px;
+	font-size: 10px;
+	line-height: 1;
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
-    line-height: 1;
 }
 
 img,

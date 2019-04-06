@@ -1,6 +1,9 @@
 @import url('reset.css');
 
-html, body {
+html,
+body,
+#app,
+.wrap {
     height: 100%;
 }
 
@@ -12,7 +15,7 @@ html, body {
 .section_title {
     position: relative;
     padding-top: 12px;
-    font-size: 32px;
+    font-size: 3.2em;
     letter-spacing: -0.5px;
 }
 
@@ -25,6 +28,7 @@ html, body {
     background-color: #4aa677;
     content: '';
 }
+
 /* Common Section Set End */
 
 /* Common Badge Style */
@@ -36,8 +40,8 @@ html, body {
     display: inline-block;
     margin-left: 4px;
     padding: 4px 8px;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 1.2em;
+    font-weight: bold;
     color: #fff;
 }
 
@@ -60,6 +64,7 @@ html, body {
 .badge_area .badge_personal {
     background-color: #2f53cc;
 }
+
 /* Common Badge Style End */
 
 .section_main {
@@ -69,8 +74,8 @@ html, body {
 }
 
 .section_main h1 {
-    font-family: 'Do Hyeon', '나눔고딕',NanumGothic,'Nanum Gothic', '맑은고딕',MalgunGothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
-    font-size: 48px;
+    font-family: 'Do Hyeon', '나눔고딕', NanumGothic, 'Nanum Gothic', '맑은고딕', MalgunGothic, '돋움', Dotum, Helvetica, 'Apple SD Gothic Neo', Sans-serif;
+    font-size: 4.8em;
 }
 
 .section_main h1 em {
@@ -97,7 +102,8 @@ html, body {
     background-color: #edf0f2;
 }
 
-.section_project_list .dimmed {
+/* Dimmed Area Style */
+.dimmed {
     position: fixed;
     top: 0;
     left: 0;
@@ -106,15 +112,192 @@ html, body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.section_project_list .dimmed .modal {
+.dimmed .modal {
+    overflow-y: scroll;
     position: absolute;
     top: 50%;
     left: 50%;
+    max-height: 80%;
     transform: translate(-50%, -50%);
-    width: 620px;
-    padding: 28px 28px;
-    background-color: #fff;
+    width: 550px;
+    padding: 32px 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 2px;
 }
+
+.dimmed .info_area {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.dimmed .info_area .title {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.dimmed .info_area .title:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 14px 0 0 16px;
+    border-style: solid;
+    border-width: 6px 0 6px 8px;
+    border-color: transparent transparent transparent #999;
+    vertical-align: top;
+    content: '';
+}
+
+.dimmed .btn_close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 40px;
+    height: 40px;
+}
+
+.dimmed .btn_close:hover {
+    opacity: 0.7;
+}
+
+.dimmed .btn_close:before,
+.dimmed .btn_close:after {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    content: ' ';
+    height: 40px;
+    width: 1px;
+    background-color: #333;
+}
+
+.dimmed .btn_close:before {
+    transform: rotate(45deg);
+}
+
+.dimmed .btn_close:after {
+    transform: rotate(-45deg);
+}
+
+.dimmed .info_area .intro_text {
+    margin-top: 8px;
+    font-size: 1.6em;
+    color: #666;
+    letter-spacing: -0.5px;
+}
+
+.dimmed .info_list {
+    margin-top: 28px;
+    font-size: 1.4em;
+    color: #666;
+    letter-spacing: -0.5px;
+}
+
+.dimmed .info_list dt {
+    display: inline-block;
+    width: 60px;
+    margin-top: 4px;
+    font-weight: bold;
+    vertical-align: top;
+    line-height: 1.4em;
+}
+
+.dimmed .info_list dt:first-of-type {
+    margin-top: 0;
+}
+
+.dimmed .info_list dd {
+    display: inline-block;
+    margin-top: 4px;
+    width: 485px;
+    vertical-align: top;
+    line-height: 1.4em;
+}
+
+.dimmed .info_list dd em {
+    font-weight: bold;
+    color: #ff3ea6;
+}
+
+.dimmed .info_list dd:first-of-type {
+    margin-top: 0;
+}
+
+.dimmed .description_area {
+    margin-top: 24px;
+    overflow: hidden;
+}
+
+.dimmed .description_title {
+    line-height: 2.2em;
+}
+
+.dimmed .description_title .no {
+    display: inline-block;
+    margin-right: 4px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4aa677;
+    letter-spacing: -1px;
+    vertical-align: top;
+}
+
+.dimmed .description_title em {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+    letter-spacing: -0.5px;
+}
+
+.dimmed .description_area .img_wrap {
+    margin-top: 12px;
+    border: 1px solid #c9c9c9;
+    padding: 8px;
+}
+
+.dimmed .description_area img {
+    width: 100%;
+}
+
+.dimmed .description_list .description {
+    position: relative;
+    padding-left: 32px;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.2em;
+}
+
+.dimmed .description_list .description:before {
+    position: absolute;
+    top: 2px;
+    left: 12px;
+    width: 10px;
+    height: 5px;
+    border-left: 3px solid #999;
+    border-bottom: 3px solid #999;
+    transform: rotate(-45deg);
+    content: '';
+}
+
+.dimmed .link_area {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.dimmed .link_area .link_website {
+    display: inline-block;
+    width: 200px;
+    padding: 8px;
+    background-color: #4aa677;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.6em
+}
+
+/* Dimmed Area Style End */
 
 .section_project_list .project_list_wrap {
     margin-top: 40px;
@@ -127,7 +310,7 @@ html, body {
     overflow: hidden;
 }
 
-.section_project_list .project_list .project_item{
+.section_project_list .project_list .project_item {
     float: left;
     width: 300px;
     height: 300px;
@@ -136,7 +319,7 @@ html, body {
     text-align: left;
 }
 
-.project_list .project_item .inner_link{
+.project_list .project_item .inner_link {
     display: block;
     height: 100%;
     padding: 16px;
@@ -148,13 +331,13 @@ html, body {
 .project_item .inner_link .title {
     display: block;
     margin-top: 8px;
-    font-size: 24px;
+    font-size: 2.4em;
 }
 
 .project_item .inner_link .info {
     margin-top: 4px;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 1.4em;
+    line-height: 1em;
     letter-spacing: -0.5px;
 }
 

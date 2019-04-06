@@ -36,38 +36,27 @@
                 <dd v-html="detailList.language"></dd>
               </dl>
             </div>
-            <div class="detail_info_area">
-              <div class="thumb_area">
-                <div class="thumb_list_wrap">
-                  <ul class="thumb_list">
-                    <li class="thumb_item">
-                      <div class="inner">
-                        <span class="tag">메인</span>
-                        <img src="#" alt="메인 썸네일">
-                      </div>
+            <div class="description_area">
+                <ul class="description_list">
+                    <li>
+                        <div class="description_title">
+                            <span class="no">01</span>
+                            <em>메인 페이지</em>
+                        </div>
+                        <p class="description">그누보드 기반 DB 설계</p>
+                        <p class="description">PHP를 이용한 캐쉬삭제</p>
+                        <p class="description">GET/POST 방식 전송 Data, AJAX 사용하여 업데이트</p>
+                        <div class="image_area">
+                            <span class="tag"></span>
+                            <div class="img_wrap">
+                                <img src="img/capture.jpg" alt="임시이미지">
+                            </div>
+                        </div>
                     </li>
-                    <li class="thumb_item">
-                      <div class="inner">
-                        <span class="tag">메인</span>
-                        <img src="#" alt="메인 썸네일">
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="text_area">
-                <ul class="detail_info_list">
-                  <li class="detail_info_item">
-                    <p>그누보드 기반 DB 설계</p>
-                  </li>
-                  <li class="detail_info_item">
-                    <p>GET/POST 방식 전송 Data, AJAX 사용하여 업데이트</p>
-                  </li>
-                  <li class="detail_info_item">
-                    <p>ajax Data PHP 코드로 변환하여 mysql 쿼리문에 적용</p>
-                  </li>
                 </ul>
-              </div>
+            </div>
+            <div class="link_area">
+                <a href="#" class="link_website">프로젝트 보기</a>
             </div>
           </div>
         </div>
