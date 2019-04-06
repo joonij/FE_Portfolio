@@ -61,7 +61,7 @@ html, body, #app {
 }
 
 .section_project_list .modal {
-    display: none;
+    display: block;
 }
 
 .section_project_list .project_list_wrap {
