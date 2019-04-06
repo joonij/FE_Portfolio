@@ -98,10 +98,6 @@ html, body {
 }
 
 .section_project_list .dimmed {
-    display: block;
-}
-
-.section_project_list .dimmed {
     position: fixed;
     top: 0;
     left: 0;
