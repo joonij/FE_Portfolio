@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic');
+
+body, p,
+h1, h2, h3, h4, h5, h6,
+ul, ol, li,
+dl, dt, dd,
+table, th, td,
+form, fieldset, legend, input, textarea, button, select {
+	margin: 0;
+	padding: 0;
+}
+
+body,
+input,
+textarea,
+select,
+button,
+table {
+    color: #333;
+    font-family: '나눔고딕',NanumGothic,'Nanum Gothic', '맑은고딕',MalgunGothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1;
+}
+
+img,
+fieldset {
+	border: 0;
+    vertical-align: top;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+em, address {
+	font-style: normal;
+}
+
+a,a:hover, a:active, a:focus {
+    color: #333;
+	text-decoration: none;
+}
+
+.blind {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+}

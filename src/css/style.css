@@ -1,0 +1,151 @@
+@import url('reset.css');
+
+html, body, #app {
+    height: 100%;
+}
+
+.section_inner {
+    padding: 80px;
+}
+
+.section_main {
+    position: relative;
+    height: 100%;
+    background-color: #fbfbfb;
+}
+
+.section_main h1 {
+    font-family: 'Do Hyeon', '나눔고딕',NanumGothic,'Nanum Gothic', '맑은고딕',MalgunGothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
+    font-size: 48px;
+}
+
+.section_main h1 em {
+    display: block;
+    vertical-align: top;
+}
+
+.section_main h1 em:first-of-type {
+    color: #ff3ea6;
+}
+
+.section_main h1 em:last-of-type {
+    color: #4aa677;
+}
+
+.section_main .title_area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section_project_list {
+    background-color: #edf0f2;
+}
+
+.section_project_list .section_title {
+    position: relative;
+    padding-top: 12px;
+    font-size: 32px;
+    letter-spacing: -0.5px;
+}
+
+.section_project_list .section_title:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 4px;
+    background-color: #4aa677;
+    content: '';
+}
+
+.section_project_list .modal {
+    display: none;
+}
+
+.section_project_list .project_list_wrap {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.section_project_list .project_list {
+    display: inline-block;
+    margin: -20px 0 0 -20px;
+    overflow: hidden;
+}
+
+.section_project_list .project_list .project_item{
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin: 20px 0 0 20px;
+    background-color: #fff;
+    text-align: left;
+}
+
+.project_list .project_item .inner_link{
+    display: block;
+    height: 100%;
+    padding: 16px;
+    background-size: cover;
+    background-position: 50%;
+    box-sizing: border-box;
+}
+
+.project_item .inner_link .badge_area {
+    margin-left: -4px;
+}
+
+.inner_link .badge_area span[class^="badge"] {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.inner_link .badge_area .badge_web {
+    background-color: #4aa677;
+}
+
+.inner_link .badge_area .badge_mobile_web {
+    background-color: #2f736a;
+}
+
+.inner_link .badge_area .badge_web_app {
+    background-color: #2f94cc;
+}
+
+.project_item .inner_link .title {
+    display: block;
+    margin-top: 8px;
+    font-size: 24px;
+}
+
+.project_item .inner_link .info {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.5px;
+}
+
+.inner_link .info span {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.inner_link .info span:first-child:before {
+    content: none;
+}
+
+.inner_link .info span:before {
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 2px 8px 0 4px;
+    background-color: #666;
+    vertical-align: top;
+    content: '';
+}
