@@ -9,55 +9,57 @@
     <section class="section_project_list">
         <div class="section_inner">
             <h2 class="section_title">Project</h2>
-            <div class="modal pop">
-                <div class="info_area">
-                    <div class="badge_area">
-                        <span class="badge_web">Web</span>
-                        <span class="badge_mobile_web">Mobile Web</span>
+            <div class="dimmed">
+                <div class="modal pop">
+                    <div class="info_area">
+                        <div class="badge_area">
+                            <span class="badge_web">Web</span>
+                            <span class="badge_mobile_web">Mobile Web</span>
+                        </div>
+                        <a href="#" class="title web_link">Travel Maker</a>
+                        <a href="#" class="btn_close" role="button"><span class="blind">닫기</span></a>
+                        <p class="intro_text">여행 가이드와 여행자 매칭 서비스 제공 및 여행 설계 사이트 입니다.</p>
+                        <dl class="info_list">
+                            <dt>담당</dt>
+                            <dd>프론트엔드 / 백엔드 개발</dd>
+                            <dt>개발기간</dt>
+                            <dd>2019.02. ~ 2019.04 현재 모바일 웹 개발 진행중</dd>
+                            <dt>사용언어</dt>
+                            <dd>php, MySQL, html, css, javascript, jQuery</dd>
+                        </dl>
                     </div>
-                    <a href="#" class="title web_link">Travel Maker</a>
-                    <a href="#" class="btn_close" role="button"><span class="blind">닫기</span></a>
-                    <p class="intro_text">여행 가이드와 여행자 매칭 서비스 제공 및 여행 설계 사이트 입니다.</p>
-                    <dl class="info_list">
-                        <dt>담당</dt>
-                        <dd>프론트엔드 / 백엔드 개발</dd>
-                        <dt>개발기간</dt>
-                        <dd>2019.02. ~ 2019.04 현재 모바일 웹 개발 진행중</dd>
-                        <dt>사용언어</dt>
-                        <dd>php, MySQL, html, css, javascript, jQuery</dd>
-                    </dl>
-                </div>
-                <div class="detail_info_area">
-                    <div class="thumb_area">
-                        <div class="thumb_list_wrap">
-                            <ul class="thumb_list">
-                                <li class="thumb_item">
-                                    <div class="inner">
-                                        <span class="tag">메인</span>
-                                        <img src="#" alt="메인 썸네일">
-                                    </div>
+                    <div class="detail_info_area">
+                        <div class="thumb_area">
+                            <div class="thumb_list_wrap">
+                                <ul class="thumb_list">
+                                    <li class="thumb_item">
+                                        <div class="inner">
+                                            <span class="tag">메인</span>
+                                            <img src="#" alt="메인 썸네일">
+                                        </div>
+                                    </li>
+                                    <li class="thumb_item">
+                                        <div class="inner">
+                                            <span class="tag">메인</span>
+                                            <img src="#" alt="메인 썸네일">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="text_area">
+                            <ul class="detail_info_list">
+                                <li class="detail_info_item">
+                                    <p>그누보드 기반 DB 설계</p>
                                 </li>
-                                <li class="thumb_item">
-                                    <div class="inner">
-                                        <span class="tag">메인</span>
-                                        <img src="#" alt="메인 썸네일">
-                                    </div>
+                                <li class="detail_info_item">
+                                    <p>GET/POST 방식 전송 Data, AJAX 사용하여 업데이트</p>
+                                </li>
+                                <li class="detail_info_item">
+                                    <p>ajax Data PHP 코드로 변환하여 mysql 쿼리문에 적용</p>
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="text_area">
-                        <ul class="detail_info_list">
-                            <li class="detail_info_item">
-                                <p>그누보드 기반 DB 설계</p>
-                            </li>
-                            <li class="detail_info_item">
-                                <p>GET/POST 방식 전송 Data, AJAX 사용하여 업데이트</p>
-                            </li>
-                            <li class="detail_info_item">
-                                <p>ajax Data PHP 코드로 변환하여 mysql 쿼리문에 적용</p>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>

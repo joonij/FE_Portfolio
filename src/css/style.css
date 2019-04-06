@@ -1,12 +1,66 @@
 @import url('reset.css');
 
-html, body, #app {
+html, body {
     height: 100%;
 }
 
+/* Common Section Set */
 .section_inner {
     padding: 80px;
 }
+
+.section_title {
+    position: relative;
+    padding-top: 12px;
+    font-size: 32px;
+    letter-spacing: -0.5px;
+}
+
+.section_title:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 4px;
+    background-color: #4aa677;
+    content: '';
+}
+/* Common Section Set End */
+
+/* Common Badge Style */
+.badge_area {
+    margin-left: -4px;
+}
+
+.badge_area span[class^="badge"] {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.badge_area .badge_web {
+    background-color: #4aa677;
+}
+
+.badge_area .badge_mobile_web {
+    background-color: #2f736a;
+}
+
+.badge_area .badge_web_app {
+    background-color: #2f94cc;
+}
+
+.badge_area .badge_responsive {
+    background-color: #8d2fcc;
+}
+
+.badge_area .badge_personal {
+    background-color: #2f53cc;
+}
+/* Common Badge Style End */
 
 .section_main {
     position: relative;
@@ -20,7 +74,7 @@ html, body, #app {
 }
 
 .section_main h1 em {
-    display: block;
+    display: inline-block;
     vertical-align: top;
 }
 
@@ -43,25 +97,27 @@ html, body, #app {
     background-color: #edf0f2;
 }
 
-.section_project_list .section_title {
-    position: relative;
-    padding-top: 12px;
-    font-size: 32px;
-    letter-spacing: -0.5px;
+.section_project_list .dimmed {
+    display: block;
 }
 
-.section_project_list .section_title:before {
-    position: absolute;
+.section_project_list .dimmed {
+    position: fixed;
     top: 0;
     left: 0;
-    width: 28px;
-    height: 4px;
-    background-color: #4aa677;
-    content: '';
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.section_project_list .modal {
-    display: block;
+.section_project_list .dimmed .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 620px;
+    padding: 28px 28px;
+    background-color: #fff;
 }
 
 .section_project_list .project_list_wrap {
@@ -91,31 +147,6 @@ html, body, #app {
     background-size: cover;
     background-position: 50%;
     box-sizing: border-box;
-}
-
-.project_item .inner_link .badge_area {
-    margin-left: -4px;
-}
-
-.inner_link .badge_area span[class^="badge"] {
-    display: inline-block;
-    margin-left: 4px;
-    padding: 4px 8px;
-    font-size: 12px;
-    font-weight: 700;
-    color: #fff;
-}
-
-.inner_link .badge_area .badge_web {
-    background-color: #4aa677;
-}
-
-.inner_link .badge_area .badge_mobile_web {
-    background-color: #2f736a;
-}
-
-.inner_link .badge_area .badge_web_app {
-    background-color: #2f94cc;
 }
 
 .project_item .inner_link .title {
