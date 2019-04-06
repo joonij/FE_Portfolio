@@ -43,15 +43,8 @@ html, body, #app {
     background-color: #edf0f2;
 }
 
-.section_project_list .section_title {
-    position: relative;
-    padding-top: 12px;
-    font-size: 32px;
-    letter-spacing: -0.5px;
-}
-
-.section_project_list .section_title:before {
-    position: absolute;
+.section_project_list .dimmed {
+    position: fixed;
     top: 0;
     left: 0;
     width: 28px;
