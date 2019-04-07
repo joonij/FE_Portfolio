@@ -33,7 +33,9 @@ body,
 
 /* Common Badge Style */
 .badge_area {
+    position: relative;
     margin-left: -4px;
+    z-index: 1;
 }
 
 .badge_area span[class^="badge"] {
@@ -110,6 +112,7 @@ body,
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
 }
 
 .dimmed .modal {
@@ -321,7 +324,9 @@ body,
 }
 
 .section_project_list .project_list .project_item {
+    position: relative;
     display: inline-block;
+    overflow: hidden;
     width: 300px;
     height: 300px;
     margin: 20px 0 0 20px;
@@ -331,6 +336,7 @@ body,
 }
 
 .project_list .project_item .inner_link {
+    position: relative;
     display: block;
     height: 100%;
     padding: 16px;
@@ -339,17 +345,47 @@ body,
     box-sizing: border-box;
 }
 
+.project_list .project_item .inner_link:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    content: '';
+}
+
+.project_list .project_item .thumb_area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+.project_list .project_item:hover .thumb_area {
+    transform: scale(1.05);
+    transition-duration: .3s;
+}
+
 .project_item .inner_link .title {
+    position: relative;
     display: block;
     margin-top: 8px;
     font-size: 2.4em;
+    color: #fff;
+    z-index: 1;
 }
 
 .project_item .inner_link .info {
-    margin-top: 4px;
+    position: relative;
+    margin-top: 8px;
     font-size: 1.4em;
     line-height: 1em;
     letter-spacing: -0.5px;
+    color: rgba(255, 255, 255, 0.95);
+    z-index: 1;
 }
 
 .inner_link .info span {
@@ -366,10 +402,75 @@ body,
     width: 1px;
     height: 10px;
     margin: 2px 8px 0 4px;
-    background-color: #666;
+    background-color: #fff;
     vertical-align: top;
     content: '';
 }
+
+/*  Section Project List End */
+
+/* Section Skills */
+.section_skills {
+    background-color: #fbfbfb;
+    text-align: center;
+}
+
+.section_skills .section_title {
+    text-align: left;
+}
+
+.section_skills .skill_list {
+    margin: 32px 0 0 -80px;
+    overflow: hidden;
+}
+
+.section_skills .skill_list li {
+    display: inline-block;
+    min-width: 400px;
+    margin-top: 16px;
+    padding-left: 80px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.section_skills .skill_list li .wrap {
+    display: table;
+}
+
+.section_skills .icon_area {
+    display: table-cell;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #c9c9c9;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.section_skills .icon_area img{
+    fill: #fff;
+}
+
+.section_skills .text_area {
+    display: table-cell;
+    padding-left: 16px;
+    vertical-align: middle;
+}
+
+.section_skills .skill_name {
+    font-size: 1.8em;
+    color: #666;
+}
+
+.section_skills .description {
+    margin-top: 8px;
+    font-size: 1.4em;
+    color: #999;
+}
+
+/* Section Skills End */
+
+/* Section Contact Style */
 
 .section_contact {
     background-color: #edf0f2;

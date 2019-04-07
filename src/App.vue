@@ -54,7 +54,8 @@
         <div class="project_list_wrap">
           <ul class="project_list">
             <li class="project_item" v-for="(project, index) in projects">
-              <a href="javascript:void(0)" class="inner_link" :style="{'background-image':'url(' + projectImgUrl + project.bg + ')'}" @click="modalPop(project.no)">
+              <div class="thumb_area"  :style="{'background-image':'url(' + projectImgUrl + project.bg + ')'}">&nbsp;</div>
+              <a href="javascript:void(0)" class="inner_link" @click="modalPop(project.no)">
                 <div class="badge_area">
                   <span class="badge_web" v-if="project.web">WEB</span>
                   <span class="badge_mobile_web" v-if="project.mobile">MOBILE WEB</span>
@@ -72,6 +73,31 @@
           </ul>
         </div>
       </div>
+    </section>
+    <section class="section_skills">
+        <div class="section_inner">
+          <h2 class="section_title">Skills</h2>
+          <ul class="skill_list">
+            <li>
+              <div class="wrap">
+                <div class="icon_area">
+                  <img src="src/assets/skill_icon_ai.svg" alt="임시" width="32">
+                </div>
+                <div class="text_area">
+                  <strong class="skill_name">HTML</strong>
+                  <p class="description">웹표준, 웹접근성 마크업 가능</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="icon_area"><span class="icon">&nbsp;</span></div>
+              <div class="text_area">
+                <strong class="skill_name">HTML</strong>
+                <p class="description">웹표준, 웹접근성 마크업 가능</p>
+              </div>
+            </li>
+          </ul>
+        </div>
     </section>
     <section class="section_contact">
         <div class="section_inner">
