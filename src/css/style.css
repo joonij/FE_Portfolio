@@ -321,12 +321,13 @@ body,
 }
 
 .section_project_list .project_list .project_item {
-    float: left;
+    display: inline-block;
     width: 300px;
     height: 300px;
     margin: 20px 0 0 20px;
     background-color: #fff;
     text-align: left;
+    vertical-align: top;
 }
 
 .project_list .project_item .inner_link {
@@ -368,4 +369,121 @@ body,
     background-color: #666;
     vertical-align: top;
     content: '';
+}
+
+.section_contact {
+    background-color: #edf0f2;
+    text-align: center;
+}
+
+.section_contact .section_title {
+    text-align: left;
+}
+
+.section_contact .contact_wrap {
+    display: inline-block;
+    overflow: hidden;
+    padding-top: 40px;
+    text-align: left;
+}
+
+.section_contact .profile_area {
+    float: left;
+    max-width: 400px;
+    text-align: center;
+}
+
+.section_contact .profile_area .photo_area {
+    overflow: hidden;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #c9c9c9;
+    border-radius: 50%;
+}
+
+.section_contact .photo_area img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.section_contact .profile_area .introduce{
+    margin-top: 24px;
+    font-size: 1.8em;
+}
+
+.section_contact .profile_area .email_info {
+    margin-top: 8px;
+    font-size: 1.4em;
+}
+
+.section_contact .message_area {
+    float: left;
+    margin-left: 60px;
+    text-align: right;
+}
+
+.email_area, .phone_number_area, .message_input_area {
+    display: flex;
+    margin-top: 20px;
+    min-width: 500px;
+}
+
+.section_contact .message_area label {
+    position: relative;
+    flex: none;
+    margin: auto 16px auto 0;
+    font-size: 1.6em;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.section_contact .message_area label em {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    font-weight: bold;
+    color: #ff3ea6;
+}
+
+.section_contact .message_area input[type="text"] {
+    flex: 1 0 auto;
+    height: 20px;
+    padding: 4px 8px;
+    border: 1px solid #c9c9c9;
+    font-size: 14px;
+    color: #666;
+}
+
+.section_contact .message_area textarea {
+    flex: 1 0 auto;
+    min-height: 250px;
+    padding: 4px 8px;
+    border: 1px solid #c9c9c9;
+    font-size: 14px;
+    color: #666;
+    resize: none;
+}
+
+.section_contact .message_area textarea::placeholder,
+.section_contact .message_area input[type="text"]::placeholder {
+    font-size: 14px;
+    color: #999;
+}
+
+.message_area .message_input_area label{
+    margin: 4px 16px auto 0;
+}
+
+.section_contact .btn_send {
+    width : 150px;
+    height: 40px;
+    margin-top: 16px;
+    background-color: #4aa677;
+    border: 0;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #fff;
 }

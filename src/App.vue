@@ -76,27 +76,29 @@
     <section class="section_contact">
         <div class="section_inner">
             <h2 class="section_title">Contact</h2>
-            <div class="profile_area">
-                <div class="photo_area">
-                    <img src="img/ryu.jpg" alt="류준열">
-                </div>
-                <p class="introduce">확장성 좋은 프론트엔드 개발자 정준희 입니다.</p>
-                <p class="email_info">joonij93@gmail.com</p>
-            </div>
-            <div class="message_area">
-                <div class="email_area">
-                    <label for="e_mail">이메일</label>
-                    <input id="e_mail" type="text" name="e-mail"></input>
-                </div>
-                <div class="phone_number_area">
-                    <label for="phone_number">연락처</label>
-                    <input id="phone_number" type="text" name="phone"></input>
-                </div>
-                <div class="message_area">
-                    <label for="message">메시지</label>
-                    <textarea id="message" name="text-message"></textarea>
-                </div>
-                <button type="submit">보내기</button>
+            <div class="contact_wrap">
+              <div class="profile_area">
+                  <div class="photo_area">
+                      <img src="http://image.chosun.com/sitedata/image/201712/03/2017120301005_0.jpg" alt="류준열">
+                  </div>
+                  <p class="introduce">확장성 좋은 프론트엔드 개발자 정준희 입니다.</p>
+                  <p class="email_info">joonij93@gmail.com</p>
+              </div>
+              <div class="message_area">
+                  <div class="email_area">
+                      <label for="e_mail"><em>*</em>이메일</label>
+                      <input id="e_mail" type="text" name="e-mail" placeholder="(필수)joonij93@gmail.com"/>
+                  </div>
+                  <div class="phone_number_area">
+                      <label for="phone_number">연락처</label>
+                      <input id="phone_number" type="text" name="phone"/>
+                  </div>
+                  <div class="message_input_area">
+                      <label for="message"><em>*</em>메시지</label>
+                      <textarea id="message" name="text-message" placeholder="(필수)메세지를 입력해주세요."></textarea>
+                  </div>
+                  <button type="submit" class="btn_send">보내기</button>
+              </div>
             </div>
         </div>
     </section>
@@ -118,7 +120,7 @@ export default {
           no: "0",
           name: "Travelmaker",
           company: "허브디앤씨",
-          bg: "",
+          bg: "thumb_travelmaker.png",
           web: true,
           mobile: true,
           date: "2019.02.07 ~ 유지보수중"
@@ -127,7 +129,7 @@ export default {
           no: "1",
           name: "아들에날린",
           company: "허브디앤씨",
-          bg: "",
+          bg: "thumb_adle.png",
           app: true,
           date: "2018.12.27 - 2019.01.31"
         },
@@ -135,7 +137,7 @@ export default {
           no: "2",
           name: "Howsmuch",
           company: "허브디앤씨",
-          bg: "",
+          bg: "thumb_howsmuch.png",
           web: true,
           date: "2018.12.17 - 2018.12.21"
         },
@@ -143,7 +145,7 @@ export default {
           no: "3",
           name: "SmartScore(출시 예정)",
           company: "허브디앤씨",
-          bg: "",
+          bg: "thumb_golf.png",
           app: true,
           date: "2018.11.15 - 2018.12.21"
         },
@@ -151,7 +153,7 @@ export default {
           no: "4",
           name: "Troye Sivan Fan Page",
           company: "",
-          bg: "",
+          bg: "thumb_troyesivan.png",
           responsive: true,
           personal: true,
           date: "2018.06.02 - 2018.06.08"
@@ -160,7 +162,7 @@ export default {
           no: "5",
           name: "Fontamazing",
           company: "",
-          bg: "",
+          bg: "thumb_fontamazing.png",
           responsive: true,
           personal: true,
           date: "2018.07.25 - 2018.07.26"
@@ -169,7 +171,7 @@ export default {
           no: "6",
           name: "Izakaya Heekare",
           company: "",
-          bg: "",
+          bg: "thumb_heekare.png",
           responsive: true,
           personal: true,
           date: "2018.09.16 - 2018.09.19"
@@ -178,7 +180,7 @@ export default {
           no: "7",
           name: "Family Restaurant Ashley",
           company: "",
-          bg: "",
+          bg: "thumb_ashley.png",
           web: true,
           personal: true,
           date: "2018.06.12 - 2018.06.20"
@@ -187,7 +189,7 @@ export default {
           no: "8",
           name: "Vincent van Gogh Gallery",
           company: "",
-          bg: "",
+          bg: "thumb_gogh.png",
           web: true,
           personal: true,
           date: "2018.05.23 - 2018.05.30"
