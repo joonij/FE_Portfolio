@@ -43,7 +43,7 @@
                   <li class="description" v-for="content in detailList.content" v-html="content"></li>
               </ul>
               <div class="img_area">
-                <img :src="projectImgUrl + detailList.imgsrc" :alt="detailList.imgalt">
+                <img :src="imgUrl + detailList.imgsrc" :alt="detailList.imgalt">
               </div>
             </div>
             <div class="link_area">
@@ -54,7 +54,7 @@
         <div class="project_list_wrap">
           <ul class="project_list">
             <li class="project_item" v-for="(project, index) in projects">
-              <div class="thumb_area"  :style="{'background-image':'url(' + projectImgUrl + project.bg + ')'}">&nbsp;</div>
+              <div class="thumb_area"  :style="{'background-image':'url(' + imgUrl + project.bg + ')'}">&nbsp;</div>
               <a href="javascript:void(0)" class="inner_link" @click="modalPop(project.no)">
                 <div class="badge_area">
                   <span class="badge_web" v-if="project.web">WEB</span>
@@ -78,22 +78,15 @@
         <div class="section_inner">
           <h2 class="section_title">Skills</h2>
           <ul class="skill_list">
-            <li>
+            <li v-for="(skill, index) in skills">
               <div class="wrap">
                 <div class="icon_area">
-                  <img src="src/assets/skill_icon_ai.svg" alt="임시" width="32">
+                  <img :src="imgUrl + skill.icon" alt="icon" width="38">
                 </div>
                 <div class="text_area">
-                  <strong class="skill_name">HTML</strong>
-                  <p class="description">웹표준, 웹접근성 마크업 가능</p>
+                  <strong class="skill_name">{{skill.name}}</strong>
+                  <p class="description">{{skill.content}}</p>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div class="icon_area"><span class="icon">&nbsp;</span></div>
-              <div class="text_area">
-                <strong class="skill_name">HTML</strong>
-                <p class="description">웹표준, 웹접근성 마크업 가능</p>
               </div>
             </li>
           </ul>
@@ -105,7 +98,7 @@
             <div class="contact_wrap">
               <div class="profile_area">
                   <div class="photo_area">
-                      <img src="http://image.chosun.com/sitedata/image/201712/03/2017120301005_0.jpg" alt="류준열">
+                      <img :src="imgUrl + profileImg" alt="프로필 사진">
                   </div>
                   <p class="introduce">확장성 좋은 프론트엔드 개발자 정준희 입니다.</p>
                   <p class="email_info">joonij93@gmail.com</p>
@@ -140,7 +133,8 @@ export default {
       msgEmail: "",
       msgPhone: "",
       msgContent: "",
-      projectImgUrl: "./src/assets/",
+      imgUrl: "./src/assets/",
+      profileImg: 'profile.png',
       projects: [
         {
           no: "0",
@@ -222,48 +216,82 @@ export default {
         }
       ],
       skills: [
-        { no: "0", name: "HTML", content: "웹표준, 웹접근성 마크업 가능" },
+        { 
+          no: "0", 
+          name: "HTML", 
+          icon: 'html.png',
+          content: "웹표준, 웹접근성 Markup" 
+        },
         {
           no: "1",
           name: "CSS",
-          content: "반응형 웹, Cross Browsing 구현 가능"
+          icon: 'css.png',
+          content: "반응형 웹, Cross Browsing 구현 / Pure CSS Drawing 개발"
         },
-        { no: "2", name: "SASS", content: "변수와 mixin, import 사용" },
-        { no: "3", name: "JavaScript", content: "ECMA 2015 문법 구현 가능" },
+        { 
+          no: "2", 
+          name: "SASS", 
+          icon: 'sass.png',
+          content: "변수와 mixin, import 사용" 
+        },
+        { 
+          no: "3", 
+          name: "JavaScript", 
+          icon: 'javascript.png',
+          content: "ES6 문법, Vue.js Framework, Plug-in, Library 적용 및 수정 가능, 비동기 통신 활용 Data 전송 구현" 
+        },
         {
           no: "4",
           name: "Vue.js",
-          content: "SPA 구현, Instance Lifecycle 이해/개발활용"
+          icon: 'vue.png',
+          content: "SPA 개발 / Instance Lifecycle 이해,개발활용 / axios Data 전송 구현"
         },
         {
           no: "5",
           name: "jQuery",
-          content: "plugin 개발활용/Costom 하여 구현"
+          icon: 'jquery.png',
+          content: "plugin 개발활용 / Costom 하여 구현 / AJAX Data 전송 구현"
         },
-        { no: "6", name: "PHP", content: "그누보드를 이용한 Project 개발" },
+        { 
+          no: "6", 
+          name: "PHP", 
+          icon: 'php.png',
+          content: "Get, Post, Session 방식 Data JSON 변환하여 Page Rendering / mysql query 작성 / 그누보드를 활용한 프로젝트 개발" 
+        },
         {
           no: "7",
-          name: "MySQL ",
+          name: "MySQL",
+          icon: 'mysql.png',
           content: "Date insert,update 및 union 등을 이용한 select 쿼리문 작성"
         },
         {
           no: "8",
-          name: "Github",
-          content: "협업을 위한 Branch 생성 및 merge/기타 Branch 관리"
+          name: "Git",
+          icon: 'git.png',
+          content: "Branch 생성 / Branch 별 Commit Push, Pull / Branch merge 등 협업에 가능한 기술 가능"
         },
         {
           no: "9",
-          name: "webpack, Gulp",
-          content: "개발속도 향상을 위한 plugin 설정"
+          name: "Webpack",
+          icon: 'webpack.png',
+          content: "webpack 구조 이해 / vue.js 보일러 플레이트 활용 Project 개발 / Plug-in 적용"
         },
         {
           no: "10",
-          name: "Illustrator",
-          content: "Pentool의 능숙한 사용으로 icon 및 logo 제작 가능"
+          name: "Gulp",
+          icon: 'gulp.png',
+          content: "SCSS, Minify, Browser Sync 등 개발 편의를 위한 빌드 자동화 환경 구축"
         },
         {
           no: "11",
+          name: "Illustrator",
+          icon: 'ai.png',
+          content: "Pentool의 능숙한 사용으로 icon 및 logo 제작 가능"
+        },
+        {
+          no: "12",
           name: "Photoshop",
+          icon: 'ps.png',
           content: "Web site Banner/page 제작 가능"
         }
       ],
@@ -452,12 +480,12 @@ export default {
             1: 'PHP를 이용 cache 삭제 구현',
             2: 'AJAX GET/POST 방식 Data 전송, JSON 변환하여 Page Rendering / PHP 코드로 변환하여 mysql query 작성',
             3: 'mysql query 사용 DB 저장',
-            4: '<em>네이버 smtp 적용 / 특정 Event 자동 mail 송신 구현</em>',
+            4: '<em>네이버 smtp</em> 적용 / 특정 Event <em>자동 mail 송신</em> 구현',
             5: 'iframe Tag 사용 유튜브 동영상 적용',
-            6: '<em>kg 이니시스 결제 Module 적용</em>',
-            7: '<em>google map 적용</em><br/>- Marker별 좌표 저장하여 지도 Drag Event시 보이는 지도안에 Marker 표시 구현<br/>- 보이는 좌표 저장하여 Filtering시 저장된 좌표에 표시<br/>- geocoding 사용 text 검색 위치 찾기 구현',
+            6: 'kg 이니시스 <em>결제 Module</em> 적용',
+            7: '<em>google map</em> 적용<br/>- Marker별 좌표 저장하여 지도 <em>Drag Event</em>시 보이는 지도안에 <em>Marker 표시</em> 구현<br/>- 보이는 좌표 저장하여 Filtering시 저장된 좌표에 표시<br/>- <em>geocoding</em> 사용 text 검색 위치 찾기 구현',
             8: 'SNS login 구현',
-            9: '<em>Javascript만 사용하여 실시간 message 기능 구현</em>',
+            9: 'Javascript만 사용하여 </em>실시간 message</em> 기능 구현',
             10: 'jquery datepicker 적용',
             11: 'fullcalendar 사용 jquery datepicker 특정일 비활성화 구현'
           },
@@ -465,42 +493,42 @@ export default {
             0: '그누보드 기반 DB 설계',
             1: 'AJAX GET/POST 방식 Data 전송, JSON 변환하여 Page Rendering / PHP 코드로 변환하여 mysql query 작성',
             2: 'mysql query 사용 DB 저장',
-            3: '<em>Tesseract.js OCR 사용 글자인식 구현</em>'
+            3: '<em>Tesseract.js OCR</em> 사용 글자인식 구현'
           },
           {
             0: 'AJAX GET/POST 방식 Data 전송, JSON 변환하여 Page Rendering / PHP 코드로 변환하여 mysql query 작성',
             1: 'mysql query 사용 DB 저장',
-            2: '<em>DAUM map api 적용</em><br/>- Marker별 좌표 저장하여 지도 Drag Event시 보이는 지도안에 Marker 표시 구현<br/>- 위치 검색하여 지도 좌표값 불러오기<br/>- Marker icon custom 적용<br/>- Marker hover 시 Marker info와 함께 색 변화'
+            2: '<em>DAUM map api</em> 적용<br/>- Marker별 좌표 저장하여 지도 <em>Drag Event</em>시 보이는 지도안에 <em>Marker 표시</em> 구현<br/>- 위치 검색하여 지도 좌표값 불러오기<br/>- Marker icon custom 적용<br/>- Marker hover 시 Marker info와 함께 색 변화'
           },
           {
             0: '<em>vue.js 사용 SPA 개발</em>',
             1: 'axios GET/POST 방식 Data 전송, JSON 변환하여 Page Rendering / PHP 코드로 변환하여 mysql query 작성',
             2: 'mysql query 사용 DB 저장',
-            3: '<em>transition을 사용한 stylish component 변환</em>',
-            4: '<em>webpack을 이용한 개발환경 개선</em>'
+            3: '<em>transition</em>을 사용한 stylish component 변환',
+            4: '<em>webpack</em>을 이용한 개발환경 개선'
           },
           {
             0: 'video tag 사용 background 동영상 진행',
-            1: '<em>javascript 이용 음악재생/정지</em>',
-            2: '<em>css만 사용 물결 표시</em>'
+            1: 'javascript 이용 <em>음악재생/정지</em>',
+            2: '<em>css만 사용 물결</em> 표시'
           },
           {
-            0: '<em>vue.js의 Directive 이용 Font별 글씨 표시</em>',
-            1: '<em>reload icon click Event시 font배열 random 변환</em>'
+            0: '<em>vue.js의 Directive</em> 이용 Font별 글씨 표시',
+            1: 'reload icon click Event시 <em>font배열 random 변환</em>'
           },
           {
             0: 'jquery.ui.touch-punch.min.js 이용 mouse drag Event 구현',
-            1: '<em>SASS를 이용 CSS 처리</em>',
-            2: '<em>GULP를 이용 SASS 빌드</em>',
+            1: '<em>SASS를 이용 CSS</em> 처리',
+            2: '<em>GULP를 이용 SASS Build</em>',
             3: 'google map api 이용 Marker 표시'
           },
           {
-            0: '<em>Flickity slide를 이용 Main slide 구현</em>',
+            0: '<em>Flickity slide를 이용 Main slide</em> 구현',
             1: 'google map api 사용',
             2: '저장된 좌표배열 지도에 표시'
           },
           {
-            0: '<em>jquery.eraser.js 이용 canvas tag 지우기 효과</em><br/>(IE에선 지원을 안함으로 클릭으로 대체)'
+            0: '<em>jquery.eraser.js 이용 canvas tag 지우기</em> 효과<br/>(IE에선 지원을 안함으로 클릭으로 대체)'
           }
         ]
       }
@@ -523,9 +551,11 @@ export default {
         this.detailList.content = this.projectDetail.content[idx]
         this.detailList.imgsrc = this.projectDetail.img[idx].src
         this.detailList.imgalt = this.projectDetail.img[idx].alt
-        this.pop = true
-        var bodySelect = document.querySelector('body')
-        bodySelect.style.overflow = 'hidden'
+        setTimeout(() => {
+          this.pop = true
+          var bodySelect = document.querySelector('body')
+          bodySelect.style.overflow = 'hidden'
+        }, 100);
     },
     modalPopClose() {
       if (event.target.className === 'dimmed' || event.target.className === 'btn_close') {
@@ -573,7 +603,7 @@ export default {
         }
       })
         .then(response => {
-          console.log(response.data);
+          // console.log(response.data);
           alert(
             "연락 주셔서 감사합니다.\nmessage는 정상적으로 발송되었습니다."
           );
