@@ -79,16 +79,16 @@ body,
 }
 
 .section_main h1 em {
-    display: inline-block;
+    display: block;
     vertical-align: top;
-}
-
-.section_main h1 em:first-of-type {
-    color: #ff3ea6;
 }
 
 .section_main h1 em:last-of-type {
     color: #4aa677;
+}
+
+.section_main h1 em:first-of-type {
+    color: #ff3ea6;
 }
 
 .section_main .title_area {
@@ -230,28 +230,29 @@ body,
 }
 
 .dimmed .description_title {
-    line-height: 2.2em;
+    position: relative;
+    padding-top: 12px;
+    letter-spacing: -0.5px;
 }
-
-.dimmed .description_title .no {
-    display: inline-block;
-    margin-right: 4px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #4aa677;
-    letter-spacing: -1px;
-    vertical-align: top;
-}
-
-.dimmed .description_title em {
-    display: inline-block;
-    font-size: 18px;
+.dimmed .description_title strong {
+    font-size: 2em;
     font-weight: bold;
     color: #666;
+    vertical-align: top;
     letter-spacing: -0.5px;
 }
 
-.dimmed .description_area .img_wrap {
+.dimmed .description_title strong:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 4px;
+    background-color: #4aa677;
+    content: '';
+}
+
+.dimmed .description_area .img_area {
     margin-top: 12px;
     border: 1px solid #c9c9c9;
     padding: 8px;
@@ -266,12 +267,21 @@ body,
     padding-left: 32px;
     margin-top: 8px;
     font-size: 14px;
-    line-height: 1.2em;
+    line-height: 1.5em;
+}
+
+.dimmed .description_list .description em {
+    font-weight: bold;
+    color: #ff3ea6;
+}
+
+.dimmed .description_list .description:first-of-type {
+    margin-top: 16px;
 }
 
 .dimmed .description_list .description:before {
     position: absolute;
-    top: 2px;
+    top: 4px;
     left: 12px;
     width: 10px;
     height: 5px;

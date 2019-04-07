@@ -3,8 +3,7 @@
     <section class="section_main">
       <div class="title_area">
         <h1 id="maintext">
-          <!-- <em>코딩공장</em>공장장 정준희
-          <em>개발노트</em> -->
+          <!-- <em><em>코딩공장</em></em>공장장 정준희<em><em>개발노트</em> -->
         </h1>
         <div class="css_drawing_area"></div>
       </div>
@@ -23,7 +22,7 @@
                 <span class="badge_personal" v-if="detailList.personal">개인프로젝트</span>
               </div>
               <a :href="detailList.link" class="title web_link" target="_blank">{{detailList.name}}</a>
-              <a href="#" class="btn_close" role="button">
+              <a href="javascript:void(0)" class="btn_close" role="button" @click="modalPopClose()">
                 <span class="blind">닫기</span>
               </a>
               <p class="intro_text">{{detailList.infor}}</p>
@@ -37,26 +36,18 @@
               </dl>
             </div>
             <div class="description_area">
-                <ul class="description_list">
-                    <li>
-                        <div class="description_title">
-                            <span class="no">01</span>
-                            <em>메인 페이지</em>
-                        </div>
-                        <p class="description">그누보드 기반 DB 설계</p>
-                        <p class="description">PHP를 이용한 캐쉬삭제</p>
-                        <p class="description">GET/POST 방식 전송 Data, AJAX 사용하여 업데이트</p>
-                        <div class="image_area">
-                            <span class="tag"></span>
-                            <div class="img_wrap">
-                                <img src="img/capture.jpg" alt="임시이미지">
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+              <div class="description_title">
+                  <strong>주요기능</strong>
+              </div>
+              <ul class="description_list">
+                  <li class="description" v-for="content in detailList.content" v-html="content"></li>
+              </ul>
+              <div class="img_area">
+                <img :src="projectImgUrl + detailList.imgsrc" :alt="detailList.imgalt">
+              </div>
             </div>
             <div class="link_area">
-                <a href="#" class="link_website">프로젝트 보기</a>
+                <a :href="detailList.link" class="link_website" target="_blank">프로젝트 보기</a>
             </div>
           </div>
         </div>
@@ -82,6 +73,33 @@
         </div>
       </div>
     </section>
+    <section class="section_contact">
+        <div class="section_inner">
+            <h2 class="section_title">Contact</h2>
+            <div class="profile_area">
+                <div class="photo_area">
+                    <img src="img/ryu.jpg" alt="류준열">
+                </div>
+                <p class="introduce">확장성 좋은 프론트엔드 개발자 정준희 입니다.</p>
+                <p class="email_info">joonij93@gmail.com</p>
+            </div>
+            <div class="message_area">
+                <div class="email_area">
+                    <label for="e_mail">이메일</label>
+                    <input id="e_mail" type="text" name="e-mail"></input>
+                </div>
+                <div class="phone_number_area">
+                    <label for="phone_number">연락처</label>
+                    <input id="phone_number" type="text" name="phone"></input>
+                </div>
+                <div class="message_area">
+                    <label for="message">메시지</label>
+                    <textarea id="message" name="text-message"></textarea>
+                </div>
+                <button type="submit">보내기</button>
+            </div>
+        </div>
+    </section>
   </div>
 </template>
 
@@ -94,11 +112,11 @@ export default {
       msgEmail: "",
       msgPhone: "",
       msgValue: "",
-      projectImgUrl: "./assets/",
+      projectImgUrl: "./src/assets/",
       projects: [
         {
           no: "0",
-          name: "트래블메이커",
+          name: "Travelmaker",
           company: "허브디앤씨",
           bg: "",
           web: true,
@@ -107,7 +125,7 @@ export default {
         },
         {
           no: "1",
-          name: "아들에 날린",
+          name: "아들에날린",
           company: "허브디앤씨",
           bg: "",
           app: true,
@@ -115,7 +133,7 @@ export default {
         },
         {
           no: "2",
-          name: "하우스머치",
+          name: "Howsmuch",
           company: "허브디앤씨",
           bg: "",
           web: true,
@@ -123,7 +141,7 @@ export default {
         },
         {
           no: "3",
-          name: "스마트 스코어 project(출시 예정)",
+          name: "SmartScore(출시 예정)",
           company: "허브디앤씨",
           bg: "",
           app: true,
@@ -233,12 +251,15 @@ export default {
         personal: '',
         role: '',
         date: '',
-        language: ''
+        language: '',
+        content: '',
+        imgsrc: '',
+        imgalt: ''
       },
       projectDetail: {
         title: [
           { no: "0", 
-            name: "트래블메이커",
+            name: "Travelmaker",
             link: 'https://www.travelmaker.co.kr/',
             infor: '여행 가이드와 여행자의 매칭 사이트입니다.',
             web: true,
@@ -251,7 +272,7 @@ export default {
             language: '<em>JavaScript</em>, <em>PHP</em>, <em>MySQL</em>, HTML, CSS, jQuery'
           },
           { no: "1",
-            name: "아들에 날린",
+            name: "아들에날린",
             link: 'javascript:void(0)',
             infor: '군입대자와 지인들을 이어주는 앱입니다.',
             web: false,
@@ -264,7 +285,7 @@ export default {
             language: '<em>JavaScript</em>, <em>그누보드</em>, HTML, CSS, jQuery, PHP, MySQL'
           },
           { no: "2",
-            name: "하우스머치",
+            name: "Howsmuch",
             link: 'https://www.howsmuch.com/',
             infor: '부동산 시세비교/매물 사이트입니다.',
             web: true,
@@ -278,7 +299,7 @@ export default {
           },
           {
             no: "3",
-            name: "스마트 스코어 project(출시 예정)",
+            name: "SmartScore(출시 예정)",
             link: 'javascript:void(0)',
             infor: '골프장 예약/매칭 앱입니다.',
             web: false,
@@ -360,16 +381,105 @@ export default {
           }
         ],
         img: [
+          {
+            src: 'img_travelmaker.png',
+            alt: '트래블메이커 대표이미지'
+          },
+          {
+            src: 'img_adul.png',
+            alt: '아들에날린 대표이미지'
+          },
+          {
+            src: 'img_howsmuch.png',
+            alt: '하우스머치 대표이미지'
+          },
+          {
+            src: 'img_smartscore.png',
+            alt: '스마트스코어 대표이미지'
+          },
+          {
+            src: 'img_TroyeSivan.png',
+            alt: '트로이시반 대표이미지'
+          },
+          {
+            src: 'img_Fontamazing.png',
+            alt: '폰트어메이징 대표이미지'
+          },
+          {
+            src: 'img_Heekare.png',
+            alt: '히카리 대표이미지'
+          },
+          {
+            src: 'img_Ashley.png',
+            alt: '애슐리 대표이미지'
+          },
+          {
+            src: 'img_vanGogh.png',
+            alt: '고흐겔러리 대표이미지'
+          },
         ],
-        infor: [
+        content: [
+          {
+            0: '그누보드 기반 DB 설계',
+            1: 'PHP를 이용 cache 삭제 구현',
+            2: 'AJAX GET/POST 방식 Data 전송, JSON 변환하여 Page Rendering / PHP 코드로 변환하여 mysql query 작성',
+            3: 'mysql query 사용 DB 저장',
+            4: '<em>네이버 smtp 적용 / 특정 Event 자동 mail 송신 구현</em>',
+            5: 'iframe Tag 사용 유튜브 동영상 적용',
+            6: '<em>kg 이니시스 결제 Module 적용</em>',
+            7: '<em>google map 적용</em><br/>- Marker별 좌표 저장하여 지도 Drag Event시 보이는 지도안에 Marker 표시 구현<br/>- 보이는 좌표 저장하여 Filtering시 저장된 좌표에 표시<br/>- geocoding 사용 text 검색 위치 찾기 구현',
+            8: 'SNS login 구현',
+            9: '<em>Javascript만 사용하여 실시간 message 기능 구현</em>',
+            10: 'jquery datepicker 적용',
+            11: 'fullcalendar 사용 jquery datepicker 특정일 비활성화 구현'
+          },
+          {
+            0: '그누보드 기반 DB 설계',
+            1: 'AJAX GET/POST 방식 Data 전송, JSON 변환하여 Page Rendering / PHP 코드로 변환하여 mysql query 작성',
+            2: 'mysql query 사용 DB 저장',
+            3: '<em>Tesseract.js OCR 사용 글자인식 구현</em>'
+          },
+          {
+            0: 'AJAX GET/POST 방식 Data 전송, JSON 변환하여 Page Rendering / PHP 코드로 변환하여 mysql query 작성',
+            1: 'mysql query 사용 DB 저장',
+            2: '<em>DAUM map api 적용</em><br/>- Marker별 좌표 저장하여 지도 Drag Event시 보이는 지도안에 Marker 표시 구현<br/>- 위치 검색하여 지도 좌표값 불러오기<br/>- Marker icon custom 적용<br/>- Marker hover 시 Marker info와 함께 색 변화'
+          },
+          {
+            0: '<em>vue.js 사용 SPA 개발</em>',
+            1: 'axios GET/POST 방식 Data 전송, JSON 변환하여 Page Rendering / PHP 코드로 변환하여 mysql query 작성',
+            2: 'mysql query 사용 DB 저장',
+            3: '<em>transition을 사용한 stylish component 변환</em>',
+            4: '<em>webpack을 이용한 개발환경 개선</em>'
+          },
+          {
+            0: 'video tag 사용 background 동영상 진행',
+            1: '<em>javascript 이용 음악재생/정지</em>',
+            2: '<em>css만 사용 물결 표시</em>'
+          },
+          {
+            0: '<em>vue.js의 Directive 이용 Font별 글씨 표시</em>',
+            1: '<em>reload icon click Event시 font배열 random 변환</em>'
+          },
+          {
+            0: 'jquery.ui.touch-punch.min.js 이용 mouse drag Event 구현',
+            1: '<em>SASS를 이용 CSS 처리</em>',
+            2: '<em>GULP를 이용 SASS 빌드</em>',
+            3: 'google map api 이용 Marker 표시'
+          },
+          {
+            0: '<em>Flickity slide를 이용 Main slide 구현</em>',
+            1: 'google map api 사용',
+            2: '저장된 좌표배열 지도에 표시'
+          },
+          {
+            0: '<em>jquery.eraser.js 이용 canvas tag 지우기 효과</em><br/>(IE에선 지원을 안함으로 클릭으로 대체)'
+          }
         ]
       }
     };
   },
-  updated() {},
   methods: {
     modalPop(idx) {
-        this.pop = true
         this.detailList.no = this.projectDetail.title[idx].no
         this.detailList.name = this.projectDetail.title[idx].name
         this.detailList.link = this.projectDetail.title[idx].link
@@ -382,11 +492,15 @@ export default {
         this.detailList.role = this.projectDetail.title[idx].role
         this.detailList.date = this.projectDetail.title[idx].date
         this.detailList.language = this.projectDetail.title[idx].language
+        this.detailList.content = this.projectDetail.content[idx]
+        this.detailList.imgsrc = this.projectDetail.img[idx].src
+        this.detailList.imgalt = this.projectDetail.img[idx].alt
+        this.pop = true
         var bodySelect = document.querySelector('body')
         bodySelect.style.overflow = 'hidden'
     },
     modalPopClose() {
-      if (event.target.className === 'dimmed') {
+      if (event.target.className === 'dimmed' || event.target.className === 'btn_close') {
         this.pop = false
         var bodySelect = document.querySelector('body')
         bodySelect.style.overflow = 'auto'
@@ -419,7 +533,7 @@ export default {
 };
 document.addEventListener("DOMContentLoaded", function(){
   let MT = document.getElementById('maintext')
-  let textContent = '_.._..ㅋ.코.콛.코디.코딩.코딩ㄱ.코딩고.코딩공.코딩공ㅈ.코딩공자.코딩공장.코딩공장 '// <em>코딩공장</em>공장장 정준희 <em>개발노트</em>
+  let textContent = '_.._..<em>ㅋ</em>.<em>코</em>.<em>콛</em>.<em>코디</em>.<em>코딩</em>.<em>코딩ㄱ</em>.<em>코딩고</em>.<em>코딩공</em>.<em>코딩공ㅈ</em>.<em>코딩공자</em>.<em>코딩공장</em>.<em>코딩공장</em>ㄱ.<em>코딩공장</em>고.<em>코딩공장</em>공.<em>코딩공장</em>공ㅈ.<em>코딩공장</em>공자.<em>코딩공장</em>공장.<em>코딩공장</em>공장ㅈ.<em>코딩공장</em>공장자.<em>코딩공장</em>공장장.<em>코딩공장</em>공장장 .<em>코딩공장</em>공장장 ㅈ.<em>코딩공장</em>공장장 저.<em>코딩공장</em>공장장 정.<em>코딩공장</em>공장장 정ㅈ.<em>코딩공장</em>공장장 정주.<em>코딩공장</em>공장장 정준.<em>코딩공장</em>공장장 정줂.<em>코딩공장</em>공장장 정준흐.<em>코딩공장</em>공장장 정준희.<em>코딩공장</em>공장장 정준희<em>ㄱ</em>.<em>코딩공장</em>공장장 정준희<em>개</em>.<em>코딩공장</em>공장장 정준희<em>갭</em>.<em>코딩공장</em>공장장 정준희<em>개바</em>.<em>코딩공장</em>공장장 정준희<em>개발</em>.<em>코딩공장</em>공장장 정준희<em>개발ㄴ</em>.<em>코딩공장</em>공장장 정준희<em>개발노</em>.<em>코딩공장</em>공장장 정준희<em>개발놑</em>.<em>코딩공장</em>공장장 정준희<em>개발노트</em>'
   let mainContent = textContent.split('.')
   let contentCount = 0
 
@@ -429,7 +543,6 @@ document.addEventListener("DOMContentLoaded", function(){
     if (contentCount == mainContent.length) {
       clearInterval(startInterval)
     }
-    console.log('zz')
   }, 200)
 });
 </script>
