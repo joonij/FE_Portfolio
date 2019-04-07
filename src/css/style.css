@@ -156,6 +156,14 @@ body,
     font-weight: bold;
 }
 
+.dimmed .info_area .title:hover {
+    color: #666;
+}
+
+.dimmed .info_area .title.none:hover {
+    color: #333;
+}
+
 .dimmed .info_area .title:after {
     display: inline-block;
     width: 0;
@@ -166,6 +174,18 @@ body,
     border-color: transparent transparent transparent #999;
     vertical-align: top;
     content: '';
+}
+
+.dimmed .info_area .title:hover:after {
+    border-color: transparent transparent transparent #ababab;
+}
+
+.dimmed .info_area .title.none {
+    cursor: text;
+}
+
+.dimmed .info_area .title.none:after {
+    content: none;
 }
 
 .dimmed .btn_close {
@@ -461,6 +481,12 @@ body,
     background-color: #d4d4d4;
     text-align: center;
     vertical-align: middle;
+}
+
+.section_skills .skill_list li:hover .icon_area {
+    background-color: #4aa677;
+    transform: scale(1.05);
+    transition-duration: .3s;
 }
 
 .section_skills .icon_area img{

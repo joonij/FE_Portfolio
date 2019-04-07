@@ -21,7 +21,8 @@
                 <span class="badge_web_app" v-if="detailList.app">WEB APP</span>
                 <span class="badge_personal" v-if="detailList.personal">개인프로젝트</span>
               </div>
-              <a :href="detailList.link" class="title web_link" target="_blank">{{detailList.name}}</a>
+              <a :href="detailList.link" class="title" target="_blank" v-if="detailList.link != 'javascript:void(0)'">{{detailList.name}}</a>
+              <a :href="detailList.link" class="title none" target="_blank" v-else-if="detailList.link == 'javascript:void(0)'">{{detailList.name}}</a>
               <a href="javascript:void(0)" class="btn_close" role="button" @click="modalPopClose()">
                 <span class="blind">닫기</span>
               </a>
@@ -46,7 +47,7 @@
                 <img :src="imgUrl + detailList.imgsrc" :alt="detailList.imgalt">
               </div>
             </div>
-            <div class="link_area">
+            <div class="link_area" v-if="detailList.link != 'javascript:void(0)'">
                 <a :href="detailList.link" class="link_website" target="_blank">프로젝트 보기</a>
             </div>
           </div>
