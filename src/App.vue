@@ -87,17 +87,17 @@
               <div class="message_area">
                   <div class="email_area">
                       <label for="e_mail"><em>*</em>이메일</label>
-                      <input id="e_mail" type="text" name="e-mail" placeholder="(필수)joonij93@gmail.com"/>
+                      <input id="e_mail" type="text" name="e-mail" placeholder="ex)abcdef123@gmail.com" v-model="msgEmail"/>
                   </div>
                   <div class="phone_number_area">
                       <label for="phone_number">연락처</label>
-                      <input id="phone_number" type="text" name="phone"/>
+                      <input id="phone_number" type="text" name="phone" v-model="msgPhone"/>
                   </div>
                   <div class="message_input_area">
                       <label for="message"><em>*</em>메시지</label>
-                      <textarea id="message" name="text-message" placeholder="(필수)메세지를 입력해주세요."></textarea>
+                      <textarea id="message" name="text-message" placeholder="ex)인상적인 포트폴리오입니다. 연락주세요." v-model="msgContent"></textarea>
                   </div>
-                  <button type="submit" class="btn_send">보내기</button>
+                  <button type="submit" class="btn_send" @click="msgSend()">보내기</button>
               </div>
             </div>
         </div>
@@ -113,7 +113,7 @@ export default {
       pop: false,
       msgEmail: "",
       msgPhone: "",
-      msgValue: "",
+      msgContent: "",
       projectImgUrl: "./src/assets/",
       projects: [
         {
@@ -509,6 +509,34 @@ export default {
       }
     },
     msgSend() {
+      var pattern_num = /[0-9]/;	// 숫자 
+    	var pattern_eng = /[a-zA-Z]/;	// 문자 
+    	var pattern_spc = /[~!@#$%^&*()_+|<>?:{}]/; // 특수문자
+      var pattern_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
+
+      if (this.msgEmail == '' || this.msgContent == '') {
+        alert('필수 값(Email, Send Message)을 입력하여 주세요.')
+        return false
+      }
+      if (this.msgPhone.indexOf('<script>') != -1 || this.msgEmail.indexOf('<script>') != -1 || this.msgContent.indexOf('<script>') != -1 ) {
+        alert('비정상 접근입니다.\nmessage가 반송되었습니다.')
+        return false
+      }
+      if (this.msgEmail.indexOf('@') == -1 ) {
+        alert('정상적 Email 형태가 아닙니다.')
+        return false
+      }
+      if(!(pattern_kor.test(this.msgEmail))){
+    	} else {
+        alert('정상적 Email 형태가 아닙니다.')
+    		return false
+      }
+      if(!(pattern_eng.test(this.msgPhone)) && !(pattern_kor.test(this.msgPhone))){
+    	}else{
+        alert('정상적 연락처 형태가 아닙니다.')
+    		return false
+    	}
+
       this.$axios({
         method: "POST",
         url: "./model/ajax.php",
