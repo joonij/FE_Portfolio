@@ -10,6 +10,8 @@ body,
 /* Common Section Set */
 .section_inner {
     padding: 80px;
+    max-width: 1080px;
+    margin: 0 auto;
 }
 
 .section_title {
@@ -349,30 +351,31 @@ body,
 /* Dimmed Area Style End */
 
 .section_project_list .project_list_wrap {
-    margin-top: 40px;
+    margin: 40px 0 0 -20px;
     text-align: center;
 }
 
 .section_project_list .project_list {
-    display: inline-block;
-    margin: -20px 0 0 -20px;
     overflow: hidden;
+    width: 960px;
+    margin: 0 auto;
+
 }
 
 .section_project_list .project_list .project_item {
     position: relative;
-    display: inline-block;
+    float: left;
     overflow: hidden;
     width: 300px;
     height: 300px;
-    margin: 20px 0 0 20px;
-    background-color: #fff;
+    padding: 20px 0 0 20px;
     text-align: left;
     vertical-align: top;
 }
 
 .project_list .project_item .inner_link {
     position: relative;
+    overflow: hidden;
     display: block;
     height: 100%;
     padding: 16px;
@@ -397,10 +400,12 @@ body,
     left: 0;
     right: 0;
     bottom: 0;
+    background-size: cover;
+    background-repeat: repeat;
 }
 
 
-.project_list .project_item:hover .thumb_area {
+.project_list .inner_link:hover .thumb_area {
     transform: scale(1.05);
     transition-duration: .3s;
 }
@@ -455,13 +460,18 @@ body,
     text-align: left;
 }
 
+.section_skills .skill_list_wrap {
+    margin: 40px 0 0 -80px;
+}
+
 .section_skills .skill_list {
-    margin: 32px 0 0 -80px;
     overflow: hidden;
+    margin: 0 auto;
+    width: 1000px;
 }
 
 .section_skills .skill_list li {
-    display: inline-block;
+    float:left;
     width: 500px;
     margin-top: 16px;
     padding-left: 80px;

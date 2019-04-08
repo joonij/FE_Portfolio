@@ -55,8 +55,8 @@
         <div class="project_list_wrap">
           <ul class="project_list">
             <li class="project_item" v-for="(project, index) in projects">
-              <div class="thumb_area"  :style="{'background-image':'url(' + imgUrl + project.bg + ')'}">&nbsp;</div>
               <a href="javascript:void(0)" class="inner_link" @click="modalPop(project.no)">
+                <div class="thumb_area"  :style="{'background-image':'url(' + imgUrl + project.bg + ')'}">&nbsp;</div>
                 <div class="badge_area">
                   <span class="badge_web" v-if="project.web">WEB</span>
                   <span class="badge_mobile_web" v-if="project.mobile">MOBILE WEB</span>
@@ -78,19 +78,21 @@
     <section class="section_skills">
         <div class="section_inner">
           <h2 class="section_title">Skills</h2>
-          <ul class="skill_list">
-            <li v-for="(skill, index) in skills">
-              <div class="wrap">
-                <div class="icon_area">
-                  <img :src="imgUrl + skill.icon" alt="icon" width="38">
+          <div class="skill_list_wrap">
+            <ul class="skill_list">
+              <li v-for="(skill, index) in skills">
+                <div class="wrap">
+                  <div class="icon_area">
+                    <img :src="imgUrl + skill.icon" alt="icon" width="38">
+                  </div>
+                  <div class="text_area">
+                    <strong class="skill_name">{{skill.name}}</strong>
+                    <p class="description">{{skill.content}}</p>
+                  </div>
                 </div>
-                <div class="text_area">
-                  <strong class="skill_name">{{skill.name}}</strong>
-                  <p class="description">{{skill.content}}</p>
-                </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
     </section>
     <section class="section_contact">
