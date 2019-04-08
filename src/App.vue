@@ -618,6 +618,14 @@ export default {
     }
   }
 };
+window.onresize = function(event) {
+  let PL = document.getElementsByClassName("project_item")
+  // let PLW = PL.style.width()
+  let PLW = PL[0].offsetWidth
+  for (let i = 0; PL.length > i; i++) {
+    PL[i].style.height = PLW+'px'
+  }
+};
 document.addEventListener("DOMContentLoaded", function(){
   let MT = document.getElementById('maintext')
   let textContent = '_.._..<em>ㅋ</em>.<em>코</em>.<em>콛</em>.<em>코디</em>.<em>코딩</em>.<em>코딩ㄱ</em>.<em>코딩고</em>.<em>코딩공</em>.<em>코딩공ㅈ</em>.<em>코딩공자</em>.<em>코딩공장</em>.<em>코딩공장</em>ㄱ.<em>코딩공장</em>고.<em>코딩공장</em>공.<em>코딩공장</em>공ㅈ.<em>코딩공장</em>공자.<em>코딩공장</em>공장.<em>코딩공장</em>공장ㅈ.<em>코딩공장</em>공장자.<em>코딩공장</em>공장장.<em>코딩공장</em>공장장 .<em>코딩공장</em>공장장 ㅈ.<em>코딩공장</em>공장장 저.<em>코딩공장</em>공장장 정.<em>코딩공장</em>공장장 정ㅈ.<em>코딩공장</em>공장장 정주.<em>코딩공장</em>공장장 정준.<em>코딩공장</em>공장장 정줂.<em>코딩공장</em>공장장 정준흐.<em>코딩공장</em>공장장 정준희.<em>코딩공장</em>공장장 정준희<em>ㄱ</em>.<em>코딩공장</em>공장장 정준희<em>개</em>.<em>코딩공장</em>공장장 정준희<em>갭</em>.<em>코딩공장</em>공장장 정준희<em>개바</em>.<em>코딩공장</em>공장장 정준희<em>개발</em>.<em>코딩공장</em>공장장 정준희<em>개발ㄴ</em>.<em>코딩공장</em>공장장 정준희<em>개발노</em>.<em>코딩공장</em>공장장 정준희<em>개발놑</em>.<em>코딩공장</em>공장장 정준희<em>개발노트</em>'
@@ -630,7 +638,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if (contentCount == mainContent.length) {
       clearInterval(startInterval)
     }
-  }, 200)
+  }, 125)
 });
 </script>
 
