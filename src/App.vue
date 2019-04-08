@@ -644,7 +644,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if (contentCount == mainContent.length) {
       clearInterval(startInterval)
     }
-  }, 125)
+  }, 100)
 });
 </script>
 
