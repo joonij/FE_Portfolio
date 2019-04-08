@@ -1,129 +1,133 @@
 <template>
   <div id="app">
-    <section class="section_main">
-      <div class="title_area">
-        <h1 id="maintext">
-          <!-- <em><em>코딩공장</em></em>공장장 정준희<em><em>개발노트</em> -->
-        </h1>
-        <div class="css_drawing_area"></div>
-      </div>
-    </section>
-    <section class="section_project_list">
-      <div class="section_inner">
-        <h2 class="section_title">Project</h2>
-        <div class="dimmed" v-show="this.pop" @click="modalPopClose()">
-          <div class="modal">
-            <div class="info_area">
-              <div class="badge_area">
-                <span class="badge_web" v-if="detailList.web">WEB</span>
-                <span class="badge_mobile_web" v-if="detailList.mobile">MOBILE WEB</span>
-                <span class="badge_responsive" v-if="detailList.responsive">RESPONSIVE WEB</span>
-                <span class="badge_web_app" v-if="detailList.app">WEB APP</span>
-                <span class="badge_personal" v-if="detailList.personal">개인프로젝트</span>
-              </div>
-              <a :href="detailList.link" class="title" target="_blank" v-if="detailList.link != 'javascript:void(0)'">{{detailList.name}}</a>
-              <a :href="detailList.link" class="title none" target="_blank" v-else-if="detailList.link == 'javascript:void(0)'">{{detailList.name}}</a>
-              <a href="javascript:void(0)" class="btn_close" role="button" @click="modalPopClose()">
-                <span class="blind">닫기</span>
-              </a>
-              <p class="intro_text">{{detailList.infor}}</p>
-              <dl class="info_list">
-                <dt>담당</dt>
-                <dd>{{detailList.role}}</dd>
-                <dt>개발기간</dt>
-                <dd>{{detailList.date}}</dd>
-                <dt>사용언어</dt>
-                <dd v-html="detailList.language"></dd>
-              </dl>
-            </div>
-            <div class="description_area">
-              <div class="description_title">
-                  <strong>주요기능</strong>
-              </div>
-              <ul class="description_list">
-                  <li class="description" v-for="content in detailList.content" v-html="content"></li>
-              </ul>
-              <div class="img_area">
-                <img :src="imgUrl + detailList.imgsrc" :alt="detailList.imgalt">
-              </div>
-            </div>
-            <div class="link_area" v-if="detailList.link != 'javascript:void(0)'">
-                <a :href="detailList.link" class="link_website" target="_blank">프로젝트 보기</a>
-            </div>
+    <div class="wrap">
+      <section class="section_main">
+        <div class="section_inner">
+          <div class="title_area">
+            <h1 id="maintext">
+              <!-- <em><em>코딩공장</em></em>공장장 정준희<em><em>개발노트</em> -->
+            </h1>
+            <div class="css_drawing_area"></div>
           </div>
         </div>
-        <div class="project_list_wrap">
-          <ul class="project_list">
-            <li class="project_item" v-for="(project, index) in projects">
-              <a href="javascript:void(0)" class="inner_link" @click="modalPop(project.no)">
-                <div class="thumb_area"  :style="{'background-image':'url(' + imgUrl + project.bg + ')'}">&nbsp;</div>
-                <div class="badge_area">
-                  <span class="badge_web" v-if="project.web">WEB</span>
-                  <span class="badge_mobile_web" v-if="project.mobile">MOBILE WEB</span>
-                  <span class="badge_responsive" v-if="project.responsive">RESPONSIVE WEB</span>
-                  <span class="badge_web_app" v-if="project.app">WEB APP</span>
-                  <span class="badge_personal" v-if="project.personal">개인프로젝트</span>
-                </div>
-                <strong class="title">{{project.name}}</strong>
-                <div class="info">
-                  <span class="company" v-if="project.company !== ''">허브디앤씨</span>
-                  <span class="date">{{project.date}}</span>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section_skills">
+      </section>
+      <section class="section_project_list">
         <div class="section_inner">
-          <h2 class="section_title">Skills</h2>
-          <div class="skill_list_wrap">
-            <ul class="skill_list">
-              <li v-for="(skill, index) in skills">
-                <div class="wrap">
-                  <div class="icon_area">
-                    <img :src="imgUrl + skill.icon" alt="icon" width="38">
-                  </div>
-                  <div class="text_area">
-                    <strong class="skill_name">{{skill.name}}</strong>
-                    <p class="description">{{skill.content}}</p>
-                  </div>
+          <h2 class="section_title">Project</h2>
+          <div class="dimmed" v-show="this.pop" @click="modalPopClose()">
+            <div class="modal">
+              <div class="info_area">
+                <div class="badge_area">
+                  <span class="badge_web" v-if="detailList.web">WEB</span>
+                  <span class="badge_mobile_web" v-if="detailList.mobile">MOBILE WEB</span>
+                  <span class="badge_responsive" v-if="detailList.responsive">RESPONSIVE WEB</span>
+                  <span class="badge_web_app" v-if="detailList.app">WEB APP</span>
+                  <span class="badge_personal" v-if="detailList.personal">개인프로젝트</span>
                 </div>
+                <a :href="detailList.link" class="title" target="_blank" v-if="detailList.link != 'javascript:void(0)'">{{detailList.name}}</a>
+                <a :href="detailList.link" class="title none" target="_blank" v-else-if="detailList.link == 'javascript:void(0)'">{{detailList.name}}</a>
+                <a href="javascript:void(0)" class="btn_close" role="button" @click="modalPopClose()">
+                  <span class="blind">닫기</span>
+                </a>
+                <p class="intro_text">{{detailList.infor}}</p>
+                <dl class="info_list">
+                  <dt>담당</dt>
+                  <dd>{{detailList.role}}</dd>
+                  <dt>개발기간</dt>
+                  <dd>{{detailList.date}}</dd>
+                  <dt>사용언어</dt>
+                  <dd v-html="detailList.language"></dd>
+                </dl>
+              </div>
+              <div class="description_area">
+                <div class="description_title">
+                    <strong>주요기능</strong>
+                </div>
+                <ul class="description_list">
+                    <li class="description" v-for="content in detailList.content" v-html="content"></li>
+                </ul>
+                <div class="img_area">
+                  <img :src="imgUrl + detailList.imgsrc" :alt="detailList.imgalt">
+                </div>
+              </div>
+              <div class="link_area" v-if="detailList.link != 'javascript:void(0)'">
+                  <a :href="detailList.link" class="link_website" target="_blank">프로젝트 보기</a>
+              </div>
+            </div>
+          </div>
+          <div class="project_list_wrap">
+            <ul class="project_list">
+              <li class="project_item" v-for="(project, index) in projects">
+                <a href="javascript:void(0)" class="inner_link" @click="modalPop(project.no)">
+                  <div class="thumb_area"  :style="{'background-image':'url(' + imgUrl + project.bg + ')'}">&nbsp;</div>
+                  <div class="badge_area">
+                    <span class="badge_web" v-if="project.web">WEB</span>
+                    <span class="badge_mobile_web" v-if="project.mobile">MOBILE WEB</span>
+                    <span class="badge_responsive" v-if="project.responsive">RESPONSIVE WEB</span>
+                    <span class="badge_web_app" v-if="project.app">WEB APP</span>
+                    <span class="badge_personal" v-if="project.personal">개인프로젝트</span>
+                  </div>
+                  <strong class="title">{{project.name}}</strong>
+                  <div class="info">
+                    <span class="company" v-if="project.company !== ''">허브디앤씨</span>
+                    <span class="date">{{project.date}}</span>
+                  </div>
+                </a>
               </li>
             </ul>
           </div>
         </div>
-    </section>
-    <section class="section_contact">
-        <div class="section_inner">
-            <h2 class="section_title">Contact</h2>
-            <div class="contact_wrap">
-              <div class="profile_area">
-                  <div class="photo_area">
-                      <img :src="imgUrl + profileImg" alt="프로필 사진">
+      </section>
+      <section class="section_skills">
+          <div class="section_inner">
+            <h2 class="section_title">Skills</h2>
+            <div class="skill_list_wrap">
+              <ul class="skill_list">
+                <li v-for="(skill, index) in skills">
+                  <div class="wrap">
+                    <div class="icon_area">
+                      <img :src="imgUrl + skill.icon" alt="icon" width="38">
+                    </div>
+                    <div class="text_area">
+                      <strong class="skill_name">{{skill.name}}</strong>
+                      <p class="description">{{skill.content}}</p>
+                    </div>
                   </div>
-                  <p class="introduce">확장성 좋은 프론트엔드 개발자 정준희 입니다.</p>
-                  <p class="email_info">joonij93@gmail.com</p>
-              </div>
-              <div class="message_area">
-                  <div class="email_area">
-                      <label for="e_mail"><em>*</em>이메일</label>
-                      <input id="e_mail" type="text" name="e-mail" placeholder="ex)abcdef123@gmail.com" v-model="msgEmail"/>
-                  </div>
-                  <div class="phone_number_area">
-                      <label for="phone_number">연락처</label>
-                      <input id="phone_number" type="text" name="phone" v-model="msgPhone"/>
-                  </div>
-                  <div class="message_input_area">
-                      <label for="message"><em>*</em>메시지</label>
-                      <textarea id="message" name="text-message" placeholder="ex)인상적인 포트폴리오입니다. 연락주세요." v-model="msgContent"></textarea>
-                  </div>
-                  <button type="submit" class="btn_send" @click="msgSend()">보내기</button>
-              </div>
+                </li>
+              </ul>
             </div>
-        </div>
-    </section>
+          </div>
+      </section>
+      <section class="section_contact">
+          <div class="section_inner">
+              <h2 class="section_title">Contact</h2>
+              <div class="contact_wrap">
+                <div class="profile_area">
+                    <div class="photo_area">
+                        <img :src="imgUrl + profileImg" alt="프로필 사진">
+                    </div>
+                    <p class="introduce">확장성 좋은 프론트엔드 개발자 정준희 입니다.</p>
+                    <p class="email_info">joonij93@gmail.com</p>
+                </div>
+                <div class="message_area">
+                    <div class="email_area">
+                        <label for="e_mail"><em>*</em>이메일</label>
+                        <input id="e_mail" type="text" name="e-mail" placeholder="ex)abcdef123@gmail.com" v-model="msgEmail"/>
+                    </div>
+                    <div class="phone_number_area">
+                        <label for="phone_number">연락처</label>
+                        <input id="phone_number" type="text" name="phone" v-model="msgPhone"/>
+                    </div>
+                    <div class="message_input_area">
+                        <label for="message"><em>*</em>메시지</label>
+                        <textarea id="message" name="text-message" placeholder="ex)인상적인 포트폴리오입니다. 연락주세요." v-model="msgContent"></textarea>
+                    </div>
+                    <button type="submit" class="btn_send" @click="msgSend()">보내기</button>
+                </div>
+              </div>
+          </div>
+      </section>
+    </div>
   </div>
 </template>
 
